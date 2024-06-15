@@ -1,8 +1,7 @@
-import { Todos } from "../shared/components/Todos"
+import { Router } from "./router/Router"
 
 export const App = () => {
-
     return (
-        <Todos />
+        <Router />
     )
 }

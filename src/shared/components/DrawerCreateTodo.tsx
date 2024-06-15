@@ -1,7 +1,7 @@
 import { Button, Drawer, TextField } from "@mui/material"
 import { useContext, useState } from "react"
 import { GlobalContext } from "../../app/context/globalContext"
-import { serviceCreateTodo, serviceGetTodos } from "../services/todo";
+import { serviceCreateTodo } from "../services/todo";
 import { TodoType } from "../../types/todo";
 import { mutate } from "swr";
 
@@ -17,7 +17,7 @@ export const DrawerCreateTodo = () => {
                 isChecked: false,
                 name: title
             }); 
-            mutate(serviceGetTodos.name, (todos: TodoType[] | undefined) => (todos?.length ? [...todos, newTodo] : [newTodo]), false);
+            mutate(serviceCreateTodo.name, (todos: TodoType[] | undefined) => (todos?.length ? [...todos, newTodo] : [newTodo]), false);
             setTitle('')
             setIsOpen(false)
         } catch (error) {
