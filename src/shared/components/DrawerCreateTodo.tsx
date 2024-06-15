@@ -17,7 +17,7 @@ export const DrawerCreateTodo = () => {
                 isChecked: false,
                 name: title
             }); 
-            mutate(serviceGetTodos.name, (todos: TodoType[] | undefined) => (todos?.length ? [...todos, newTodo] : []), false);
+            mutate(serviceGetTodos.name, (todos: TodoType[] | undefined) => (todos?.length ? [...todos, newTodo] : [newTodo]), false);
             setTitle('')
             setIsOpen(false)
         } catch (error) {
