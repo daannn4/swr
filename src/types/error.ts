@@ -1,0 +1,1 @@
+export type TypicalError = {message: string}
